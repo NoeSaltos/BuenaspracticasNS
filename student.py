@@ -5,6 +5,7 @@ addition and average calculation, and reporting.
 
 
 class Student:
+    """Class that represents a student and manages their grades."""
     def __init__(self, id, name):
         if id == "" or name == "":
             print("ID and name cannot be empty")
