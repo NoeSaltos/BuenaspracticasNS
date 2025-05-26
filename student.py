@@ -1,3 +1,9 @@
+"""
+Module for managing students and their grades with functions such as 
+addition and average calculation, and reporting.
+"""
+
+
 class Student:
     def __init__(self, id, name):
         if id == "" or name == "":
