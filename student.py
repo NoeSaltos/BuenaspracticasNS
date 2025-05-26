@@ -15,7 +15,7 @@ class Student:
         self.isPassed = False
         self.honor = False
 
-    def addGrades(self, g):
+    def add_grades(self, g):
         if not isinstance(g, (int, float)):
             print(f"Invalid grade {g}: must be a number")
             return
@@ -24,7 +24,7 @@ class Student:
             return
         self.gradez.append(g)
 
-    def calcaverage(self):
+    def calc_average(self):
         if len(self.gradez) == 0:
             return 0
         t = 0
@@ -33,24 +33,24 @@ class Student:
         avg = t / len(self.gradez)
         return avg
 
-    def checkHonor(self):
-        if self.calcaverage() >= 90:
+    def check_honor(self):
+        if self.calc_average() >= 90:
             self.honor = True
 
-    def checkPassFail(self):
-        if self.calcaverage() >= 60:
+    def check_pass_fail(self):
+        if self.calc_average() >= 60:
             self.isPassed = True
         else:
             self.isPassed = False
 
-    def deleteGrade(self, index):
+    def delete_grade(self, index):
         try:
             del self.gradez[index]
             print(f"Deleted grade at index {index}")
         except IndexError:
             print(f"Index {index} out of range")
 
-    def removeGradeByValue(self, value):
+    def remove_grade_by_value(self, value):
         try:
             self.gradez.remove(value)
             print(f"Deleted grade with value {value}")
@@ -61,17 +61,17 @@ class Student:
         print("ID: " + str(self.id))
         print("Name: " + self.name)
         print("Grades Count: " + str(len(self.gradez)))
-        avg = self.calcaverage()
+        avg = self.calc_average()
         print("Average Grade: " + str(avg))
-        letter = self.getLetterGrade()
+        letter = self.get_letter_grade()
         print("Letter Grade: " + letter)
-        self.checkPassFail()
+        self.check_pass_fail()
         print("Passed: " + str(self.isPassed))
-        self.checkHonor()
+        self.check_honor()
         print("Honor Roll: " + str(self.honor))
 
-    def getLetterGrade(self):
-        avg = self.calcaverage()
+    def get_letter_grade(self):
+        avg = self.calc_average()
         if avg >= 90:
             return "A"
         elif avg >= 80:
@@ -86,14 +86,14 @@ class Student:
 
 def startrun():
     a = Student("123", "Diego")
-    a.addGrades(100)
-    a.addGrades("Fifty")  # Error control - invalid grade
-    a.addGrades(85)
-    a.calcaverage()
-    a.checkHonor()
-    a.checkPassFail()
-    a.deleteGrade(10)  # IndexError control
-    a.removeGradeByValue(50)  # ValueError control
+    a.add_grades(100)
+    a.add_grades("Fifty")  # Error control - invalid grade
+    a.add_grades(85)
+    a.calc_average()
+    a.check_honor()
+    a.check_pass_fail()
+    a.delete_grade(10)  # IndexError control
+    a.remove_grade_by_value(50)  # ValueError control
     a.report()
 
 
