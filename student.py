@@ -1,4 +1,4 @@
-class student:
+class Student:
     def __init__(self, id, name):
         if id == "" or name == "":
             print("ID and name cannot be empty")
@@ -78,7 +78,7 @@ class student:
 
 
 def startrun():
-    a = student("123", "Diego")
+    a = Student("123", "Diego")
     a.addGrades(100)
     a.addGrades("Fifty")  # Error control - invalid grade
     a.addGrades(85)
